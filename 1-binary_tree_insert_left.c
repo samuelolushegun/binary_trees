@@ -26,6 +26,8 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	}
 
 	binary_tree_insert_left(n_node, (parent->left)->n);
+	n_node->left->left = parent->left->left;
+	n_node->left->right = parent->left->right;
 	parent->left = n_node;
 	return (n_node);
 }
